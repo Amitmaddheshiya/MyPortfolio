@@ -359,7 +359,7 @@ const projects = [
       "portfolio.png",
     alt: "Portfolio",
     source_code_link: "https://github.com/Amitmaddheshiya/MyPortfolio",
-    live_link: "https://mern-rajesh-portfolio.web.app/",
+    live_link: "https://amit-maddheshiya-portfolio.vercel.app/",
   },
   // {
   //   name: "PG Management",
