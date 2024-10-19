@@ -334,8 +334,8 @@ const projects = [
       "./proConnectup.png",
     alt: "Pro Connect Up",
 
-    source_code_link: "https://admin-panel-lilac-theta.vercel.app/",
-    live_link: "https://github.com/Amitmaddheshiya/admin-panel-reactjs",
+    source_code_link: "https://github.com/Amitmaddheshiya/admin-panel-reactjs",
+    live_link: "https://admin-panel-lilac-theta.vercel.app/",
   },
   {
     name: "My Portfolio",
@@ -358,7 +358,7 @@ const projects = [
     image:
       "portfolio.png",
     alt: "Portfolio",
-    source_code_link: "https://github.com/Rajeshesh/portfolio",
+    source_code_link: "https://github.com/Amitmaddheshiya/MyPortfolio",
     live_link: "https://mern-rajesh-portfolio.web.app/",
   },
   // {
