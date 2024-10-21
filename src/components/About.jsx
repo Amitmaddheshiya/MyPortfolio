@@ -47,7 +47,9 @@ if (isSmallScreen) {
   layoutClass = "circle";
 }
   return (
-    <div>
+    
+    <div className="mt-32 md:mt-20 lg:mt-0">
+     
       <motion.div variants={textVariant()}>
         <p className={styles.sectionSubText}>Introduction</p>
         <h2 className={styles.sectionHeadText}>Overview.</h2>

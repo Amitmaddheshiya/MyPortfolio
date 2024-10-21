@@ -5,6 +5,7 @@ import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 
+
 const ProjectCard = ({
   index,
   name,
@@ -17,6 +18,7 @@ const ProjectCard = ({
 }) => {
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.1 + 0.3, 0.7)}>
+       
       <div className="w-full rounded-2xl bg-tertiary p-5 sm:w-[360px]">
         <div className="relative h-[230px] w-full">
           <img
@@ -68,7 +70,8 @@ const ProjectCard = ({
 
 const Works = () => {
   return (
-    <>
+    <div>
+      
       <motion.div variants={textVariant()}>
         <p className={`${styles.sectionSubText} `}>My work</p>
         <h2 className={`${styles.sectionHeadText}`}>Projects.</h2>
@@ -92,7 +95,7 @@ const Works = () => {
           <ProjectCard key={index} index={index} {...project} />
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

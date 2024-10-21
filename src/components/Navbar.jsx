@@ -32,7 +32,7 @@ const Navbar = () => {
         scrolled ? "bg-primary" : "bg-transparent"
       }`}
     >
-      <div className="mx-auto flex w-full max-w-7xl items-center justify-between">
+      <div className=" mx-auto flex w-full max-w-7xl items-center justify-between">
         <Link
           to="/"
           className="flex items-center gap-2"
@@ -81,11 +81,11 @@ const Navbar = () => {
   <img
     src={
       toggle
-        ? "https://rajesh-mern-stack-portfolio-images.s3.ap-south-1.amazonaws.com/assets/close.svg"
-        : "https://rajesh-mern-stack-portfolio-images.s3.ap-south-1.amazonaws.com/assets/menu.svg"
+        ? "./close.svg"
+        : "./menu.svg"
     }
     alt="menu"
-    className="h-[28px] w-[28px] object-contain border border-2 border-red-700"
+    className="h-[28px] w-[28px] object-contain"
   />
 </button>
 
