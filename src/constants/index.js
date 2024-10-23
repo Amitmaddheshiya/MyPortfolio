@@ -312,6 +312,33 @@ const projects = [
     source_code_link: "https://github.com/Amitmaddheshiya/eventfesto.com-amit",
     live_link: "https://eventfesto-com-amit.vercel.app/",
   },
+
+  {
+    name: "Waether App",
+    description:
+      "City Temperature Search Box: A dynamic feature that allows users to input a city name and retrieve real-time temperature data, enhancing user engagement with instant weather information.",
+      tags: [
+      {
+        name: "MERN",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "restapi",
+        color: "green-text-gradient",
+      },
+      {
+        name: "bootstrap",
+        color: "pink-text-gradient",
+      },
+    ],
+    image:
+      "./weatherApp.png",
+    alt: "Weather App",
+
+    source_code_link: "https://github.com/Amitmaddheshiya/WeatherAppExpressJs",
+    live_link: "https://weatherappexpressjs.onrender.com/",
+  },
+
   {
     name: "Pro Connect Up",
     description:
