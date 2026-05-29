@@ -14,16 +14,17 @@ const ProjectCard = ({ index, project }) => {
   return (
     <motion.article
       variants={fadeIn("up", "spring", index * 0.08, 0.75)}
-      className="group flex h-full flex-col overflow-hidden rounded-xl border border-white/10 bg-white/[0.06] shadow-2xl shadow-black/10 backdrop-blur-xl transition hover:-translate-y-1 hover:border-cyan-300/35"
+      className="group flex h-full flex-col overflow-hidden rounded-xl border border-white/10 bg-white/[0.06] shadow-2xl shadow-black/10 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-300/35 hover:bg-white/[0.085]"
     >
-      <div className="relative aspect-[16/9] overflow-hidden bg-slate-900">
+      <div className="relative aspect-[16/9] overflow-hidden bg-slate-950">
         {!loaded && <div className="absolute inset-0 animate-pulse bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900" />}
         <img
           src={project.image}
           alt={project.name}
           onLoad={() => setLoaded(true)}
-          className={`h-full w-full object-cover transition duration-700 group-hover:scale-105 ${loaded ? "opacity-100" : "opacity-0"}`}
+          className={`h-full w-full object-contain p-2 transition duration-700 group-hover:scale-[1.02] ${loaded ? "opacity-100" : "opacity-0"}`}
         />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/55 via-transparent to-transparent" />
         <div className="absolute left-4 top-4 rounded-full border border-white/15 bg-slate-950/70 px-3 py-1 text-xs font-bold text-cyan-100 backdrop-blur">
           {project.platform}
         </div>
@@ -59,7 +60,7 @@ const ProjectCard = ({ index, project }) => {
           >
             Case Study <ArrowForward sx={{ fontSize: 17 }} />
           </Link>
-          {project.links.slice(0, 2).map((link) => (
+          {project.links.map((link) => (
             <a
               key={link.url}
               href={link.url}

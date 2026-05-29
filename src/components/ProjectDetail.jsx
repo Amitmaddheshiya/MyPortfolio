@@ -61,7 +61,7 @@ const ProjectDetail = () => {
         </div>
 
         <div className="overflow-hidden rounded-xl border border-white/10 bg-white/[0.06] p-3 backdrop-blur-xl">
-          <img src={project.image} alt={project.name} className="aspect-[16/10] w-full rounded-lg object-cover" />
+          <img src={project.image} alt={project.name} className="aspect-[16/10] w-full rounded-lg bg-slate-950 object-contain p-2" />
         </div>
       </section>
 

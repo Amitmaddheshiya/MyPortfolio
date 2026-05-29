@@ -43,17 +43,17 @@ const Navbar = () => {
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between">
         <Link
           to="/"
-          className="flex items-center gap-3"
+          className="flex min-w-0 items-center gap-3"
           onClick={() => {
             setActive("");
             window.scrollTo(0, 0);
           }}
         >
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-cyan-300/30 bg-white/10 text-sm font-black text-cyan-200 shadow-lg shadow-cyan-950/30">
-            AM
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-white/10 bg-white shadow-lg shadow-black/20">
+            <img src={`${process.env.PUBLIC_URL}/logo.png`} alt="Amit Maddheshiya logo" className="h-full w-full object-contain p-1" />
           </div>
-          <div>
-            <p className="text-[15px] font-bold leading-tight text-white sm:text-[17px]">
+          <div className="min-w-0">
+            <p className="truncate text-[14px] font-bold leading-tight text-white sm:text-[17px]">
               Amit Maddheshiya
             </p>
             <p className="hidden text-xs font-medium text-slate-400 sm:block">
@@ -76,11 +76,10 @@ const Navbar = () => {
           ))}
         </ul>
 
-        <div className="flex items-center gap-3">
+        <div className="ml-auto flex items-center gap-3 lg:ml-0">
           <a
             href={resumeLink}
-            target="_blank"
-            rel="noopener noreferrer"
+            download="Amit-Maddheshiya-Resume.pdf"
             className="inline-flex items-center gap-2 rounded-lg border border-amber-200/30 bg-[linear-gradient(135deg,#facc15,#22d3ee,#a78bfa)] px-3 py-2 text-sm font-black text-slate-950 shadow-lg shadow-cyan-950/30 transition hover:scale-[1.03] hover:shadow-cyan-500/20 xs:px-4"
           >
             <span className="hidden xs:inline">Resume</span>

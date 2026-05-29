@@ -1,5 +1,5 @@
-const resumeLink =
-  "https://drive.google.com/file/d/16DcreuJOCqm4p3QMqToi0whb2ogEnjd_/view?usp=sharing";
+const publicAsset = (fileName) => `${process.env.PUBLIC_URL}/${fileName}`;
+const resumeLink = publicAsset("resume.pdf");
 
 const navLinks = [
   { id: "about", title: "About" },
@@ -65,7 +65,7 @@ const githubProfiles = [
     name: "Amit Maddheshiya",
     role: "Primary engineering profile",
     url: "https://github.com/Amitmaddheshiya",
-    focus: ["Portfolio", "MERN apps", "product builds"],
+    focus: ["Portfolio", "full stack systems", "product builds"],
   },
   {
     name: "Amit Web Solution Company",
@@ -153,16 +153,15 @@ const projects = [
     name: "SignagePlayerTV.apk",
     platform: "Android TV / React Native",
     ownership: "Built for employer",
-    image:
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1200&q=80",
+    image: publicAsset("signageplayertv.PNG"),
     description:
       "Built a distributed digital signage ecosystem supporting TV-based multimedia advertising with remote content management, scheduling, screen layouts, grouping, and device-level control.",
     tech: ["React Native", "Express.js", "MongoDB"],
     features: ["Video, image, PDF, and PPT rendering", "Remote HTTP control", "Scheduling engine", "Screen split layouts", "Content grouping", "TV rotation system"],
     architectureTags: ["Distributed System", "Offline-first", "Media Streaming", "Device Management"],
     links: [
-      { label: "Live APK", url: "https://github.com/amitnextview-crypto/NVAPlayerTV/releases/download/NVA-SignagePlayerTV/NVA-SignagePlayerTV.apk" },
-      { label: "Loom Video", url: "https://www.loom.com/share/1b8ff78eb54b4f6d998db0681ca5f30a" },
+      { label: "APK Download", url: "https://github.com/amitnextview-crypto/NVAPlayerTV/releases/download/NVA-SignagePlayerTV/NVA-SignagePlayerTV.apk" },
+      { label: "Demo Video", url: "https://www.loom.com/share/1b8ff78eb54b4f6d998db0681ca5f30a" },
     ],
     caseStudy: {
       problem: "Businesses need centralized signage control without manually touching each TV device.",
@@ -181,16 +180,15 @@ const projects = [
     name: "AWSPayroll.apk",
     platform: "Mobile SaaS / React Native",
     ownership: "Built for employer",
-    image:
-      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80",
+    image: publicAsset("awspayroll.jpeg"),
     description:
       "Developed a full employee payroll and attendance management platform with automated salary generation, leave tracking, attendance monitoring, and Excel export workflows.",
     tech: ["React Native", "Express.js", "MongoDB"],
     features: ["Attendance monitoring", "Leave tracking", "Automated salary generation", "Excel export workflows", "Employee records"],
     architectureTags: ["Enterprise SaaS", "RBAC", "HR Automation", "Real-time Tracking"],
     links: [
-      { label: "APK", url: "https://github.com/amitnextview-crypto/AWSPayroll/releases/download/AWSPayroll/app-release.apk" },
-      { label: "Loom Video", url: "https://www.loom.com/share/06d6f9bdd01f4eb893ae0cd64740c575" },
+      { label: "APK Download", url: "https://github.com/amitnextview-crypto/AWSPayroll/releases/download/AWSPayroll/app-release.apk" },
+      { label: "Demo Video", url: "https://www.loom.com/share/06d6f9bdd01f4eb893ae0cd64740c575" },
     ],
     caseStudy: {
       problem: "Manual payroll processing is slow, error-prone, and hard to audit.",
@@ -209,16 +207,15 @@ const projects = [
     name: "AWSHRFlow.exe",
     platform: "Desktop / Electron",
     ownership: "Built for employer",
-    image:
-      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80",
+    image: publicAsset("awshrflow.PNG"),
     description:
       "Created an Electron-based HR automation desktop suite capable of generating payslips and 17+ HR documents in PDF format.",
     tech: ["Electron.js", "Node.js"],
     features: ["Payslip generation", "17+ HR documents", "PDF workflows", "Desktop installer"],
     architectureTags: ["Desktop Automation", "PDF Generation", "HR Workflow System"],
     links: [
-      { label: "Download", url: "https://github.com/amitwebsolutioncompany-maker/AWSHRFlow/releases/download/AWSHRFlow/AWSHRFlow.Setup.1.6.0.exe" },
-      { label: "Loom Video", url: "https://www.loom.com/share/60798bf44e104d1dad8114c672dc9b12" },
+      { label: "EXE Download", url: "https://github.com/amitwebsolutioncompany-maker/AWSHRFlow/releases/download/AWSHRFlow/AWSHRFlow.Setup.1.6.0.exe" },
+      { label: "Demo Video", url: "https://www.loom.com/share/60798bf44e104d1dad8114c672dc9b12" },
     ],
     caseStudy: {
       problem: "HR document generation often depends on repeated manual editing and formatting.",
@@ -237,15 +234,14 @@ const projects = [
     name: "AndroidController.exe",
     platform: "Desktop Utility / ADB",
     ownership: "Built for employer",
-    image:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
+    image: publicAsset("androidcontroller.PNG"),
     description:
       "Built a desktop utility to remotely manage Android TVs and devices through ADB-based command execution and automation.",
     tech: ["Electron.js", "Node.js", "ADB"],
     features: ["ADB command execution", "Remote TV/device actions", "Desktop automation", "Operational utility workflows"],
     architectureTags: ["Device Control", "System Utility", "Desktop Engineering"],
     links: [
-      { label: "Download", url: "https://github.com/amitnextview-crypto/Amitmaddheshiya-NV-A-ANDROID-CONTROLLER-ELECTRONJS/releases/download/ANDROID_CONTROLLER.EXE.2.2.1/NV-A.Android.Controller.Setup.2.2.1.exe" },
+      { label: "EXE Download", url: "https://github.com/amitnextview-crypto/Amitmaddheshiya-NV-A-ANDROID-CONTROLLER-ELECTRONJS/releases/download/ANDROID_CONTROLLER.EXE.2.2.1/NV-A.Android.Controller.Setup.2.2.1.exe" },
     ],
     caseStudy: {
       problem: "Managing multiple Android TVs manually is slow and operationally expensive.",
@@ -264,16 +260,15 @@ const projects = [
     name: "MitPix.apk",
     platform: "Salon SaaS / React Native",
     ownership: "Own business product",
-    image:
-      "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=80",
+    image: publicAsset("mitpix.jpeg"),
     description:
       "Built a scalable salon SaaS ecosystem with customer booking, role-based staff systems, analytics dashboards, offers, and operational workflows.",
     tech: ["React Native", "Express.js", "MongoDB"],
     features: ["Customer booking", "Staff roles", "Analytics dashboards", "Offer workflows", "Operational management"],
     architectureTags: ["Multi-tenant SaaS", "Booking Engine", "RBAC", "Analytics Dashboard"],
     links: [
-      { label: "APK", url: "https://github.com/amitwebsolutioncompany-maker/MitPixAuraStudio/releases/download/MitPixAuraStudio/app-release.apk" },
-      { label: "Loom Video", url: "https://www.loom.com/share/e70da0a6e77943fdb2ede904b860d1a1" },
+      { label: "APK Download", url: "https://github.com/amitwebsolutioncompany-maker/MitPixAuraStudio/releases/download/MitPixAuraStudio/app-release.apk" },
+      { label: "Demo Video", url: "https://www.loom.com/share/e70da0a6e77943fdb2ede904b860d1a1" },
     ],
     caseStudy: {
       problem: "Salon operations need bookings, staff workflows, offers, and customer management in one place.",
@@ -292,14 +287,13 @@ const projects = [
     name: "EasyEmployee Web",
     platform: "Web Dashboard",
     ownership: "Built for employer",
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+    image: publicAsset("easyemployee.PNG"),
     description:
       "Web-based payroll and employee management platform with automated HR workflows and attendance systems.",
     tech: ["React", "Express.js", "MongoDB"],
     features: ["Admin dashboard", "Payroll workflows", "Attendance systems", "Employee management"],
     architectureTags: ["Enterprise Dashboard", "HR SaaS", "Admin Panel"],
-    links: [{ label: "Live", url: "https://nextviewpayrollfrontendmerns-5wt1.vercel.app/" }],
+    links: [{ label: "Live Demo", url: "https://nextviewpayrollfrontendmerns-5wt1.vercel.app/" }],
     caseStudy: {
       problem: "HR administrators need a web control plane for employee and payroll operations.",
       useCase: "Admins manage staff, attendance, payroll, and HR workflows from a browser dashboard.",
@@ -317,14 +311,13 @@ const projects = [
     name: "Signage Business Website",
     platform: "Business Website",
     ownership: "Built for employer",
-    image:
-      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80",
+    image: publicAsset("signagebusiness.PNG"),
     description:
       "Business-facing digital signage platform showcasing advertisement management systems and enterprise signage solutions.",
     tech: ["React", "Vercel", "Responsive UI"],
     features: ["Product storytelling", "Enterprise signage positioning", "Responsive pages", "Conversion CTAs"],
     architectureTags: ["Marketing Site", "B2B Product", "Responsive Web"],
-    links: [{ label: "Live", url: "https://signage-nextview-website.vercel.app/" }],
+    links: [{ label: "Live Demo", url: "https://signage-nextview-website.vercel.app/" }],
     caseStudy: {
       problem: "The signage product needs a credible business-facing web presence.",
       useCase: "Prospects can understand digital signage capabilities, business value, and solution fit.",
@@ -342,14 +335,13 @@ const projects = [
     name: "Portfolio Website",
     platform: "Personal Brand / React",
     ownership: "Personal project",
-    image:
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
+    image: publicAsset("portfolio.png"),
     description:
       "Personal engineering portfolio designed to present product systems, architecture decisions, platform coverage, and production-ready execution.",
     tech: ["React", "Tailwind CSS", "Framer Motion"],
     features: ["Project showcases", "Case study pages", "System design section", "Responsive UI"],
     architectureTags: ["Portfolio System", "Frontend Architecture", "Engineering Storytelling"],
-    links: [{ label: "Live", url: "https://amit-maddheshiya-portfolio.vercel.app/" }],
+    links: [{ label: "Live Demo", url: "https://amit-maddheshiya-portfolio.vercel.app/" }],
     caseStudy: {
       problem: "A senior portfolio needs to prove engineering depth beyond screenshots and short descriptions.",
       useCase: "Recruiters, clients, and technical reviewers can evaluate project scope and architecture thinking.",
