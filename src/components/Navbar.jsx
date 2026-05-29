@@ -1,95 +1,117 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Close, Menu, NorthEast } from "@mui/icons-material";
 
+import { navLinks, resumeLink } from "../constants";
 import { styles } from "../styles";
-import { navLinks } from "../constants";
 
 const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      if (scrollTop > 100) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-
+    const handleScroll = () => setScrolled(window.scrollY > 60);
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const goToSection = (id, title) => {
+    setActive(title);
+    setToggle(false);
+
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => document.getElementById(id)?.scrollIntoView(), 60);
+      return;
+    }
+
+    document.getElementById(id)?.scrollIntoView();
+  };
+
   return (
     <nav
-      className={`${
-        styles.paddingX
-      } fixed top-0 z-20 flex w-full items-center py-5 ${
-        scrolled ? "bg-primary" : "bg-transparent"
+      className={`${styles.paddingX} fixed top-0 z-30 flex w-full items-center py-4 transition-all duration-300 ${
+        scrolled
+          ? "border-b border-white/10 bg-slate-950/75 shadow-2xl shadow-black/20 backdrop-blur-xl"
+          : "bg-transparent"
       }`}
     >
-      <div className=" mx-auto flex w-full max-w-7xl items-center justify-between">
+      <div className="mx-auto flex w-full max-w-7xl items-center justify-between">
         <Link
           to="/"
-          className="flex items-center gap-2"
+          className="flex items-center gap-3"
           onClick={() => {
             setActive("");
             window.scrollTo(0, 0);
           }}
         >
-          <img src="./logo.png" alt="logo" className="h-9 w-9 object-contain"  />
-          <p className="flex cursor-pointer text-[18px] font-bold text-white ">
-            AMIT{""} &nbsp;{""}
-            <span className="hidden sm:block"> | MERN Stack Developer</span>
-          </p>
+          <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-cyan-300/30 bg-white/10 text-sm font-black text-cyan-200 shadow-lg shadow-cyan-950/30">
+            AM
+          </div>
+          <div>
+            <p className="text-[15px] font-bold leading-tight text-white sm:text-[17px]">
+              Amit Maddheshiya
+            </p>
+            <p className="hidden text-xs font-medium text-slate-400 sm:block">
+              Full Stack Engineer
+            </p>
+          </div>
         </Link>
 
-        <ul className="hidden list-none flex-row gap-10 sm:flex">
+        <ul className="hidden list-none flex-row items-center gap-7 lg:flex">
           {navLinks.map((nav) => (
             <li
-            key={nav.id}
-            className={`font-poppins cursor-pointer text-[16px] font-medium ${
-              active === nav.title ? "text-white" : "text-secondary"
-            }`}
-            onClick={() => {
-              setToggle(!toggle);
-              setActive(nav.title);
-            }}
-            onKeyDown={(e) => {
-              if (e.key === "Enter") {
-                setToggle(!toggle);
-                setActive(nav.title);
-              }
-            }}
-          >
-            <a href={`#${nav.id}`}>{nav.title}</a>
-          </li>
-          
-          
+              key={nav.id}
+              className={`cursor-pointer text-[14px] font-medium transition-colors ${
+                active === nav.title ? "text-cyan-200" : "text-slate-300 hover:text-white"
+              }`}
+              onClick={() => goToSection(nav.id, nav.title)}
+            >
+              {nav.title}
+            </li>
           ))}
         </ul>
 
-        <button
-  className="sm:hidden"
-  onClick={() => setToggle(!toggle)}
-  aria-label="Toggle Menu"
->
-  <img
-    src={
-      toggle
-        ? "./close.svg"
-        : "./menu.svg"
-    }
-    alt="menu"
-    className="h-[28px] w-[28px] object-contain"
-  />
-</button>
+        <div className="flex items-center gap-3">
+          <a
+            href={resumeLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-lg border border-amber-200/30 bg-[linear-gradient(135deg,#facc15,#22d3ee,#a78bfa)] px-3 py-2 text-sm font-black text-slate-950 shadow-lg shadow-cyan-950/30 transition hover:scale-[1.03] hover:shadow-cyan-500/20 xs:px-4"
+          >
+            <span className="hidden xs:inline">Resume</span>
+            <NorthEast sx={{ fontSize: 16 }} />
+          </a>
+        </div>
 
+        <button
+          className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-white/15 bg-white/10 text-white lg:hidden"
+          onClick={() => setToggle((value) => !value)}
+          aria-label="Toggle menu"
+        >
+          {toggle ? <Close /> : <Menu />}
+        </button>
       </div>
+
+      {toggle && (
+        <div className="absolute right-6 top-16 w-[min(320px,calc(100vw-48px))] rounded-xl border border-white/10 bg-slate-950/95 p-4 shadow-2xl shadow-black/40 backdrop-blur-xl lg:hidden">
+          <ul className="flex list-none flex-col gap-2">
+            {navLinks.map((nav) => (
+              <li
+                key={nav.id}
+                className="cursor-pointer rounded-lg px-3 py-3 text-sm font-medium text-slate-200 hover:bg-white/10"
+                onClick={() => goToSection(nav.id, nav.title)}
+              >
+                {nav.title}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </nav>
   );
 };
